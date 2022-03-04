@@ -1,16 +1,22 @@
 class MovableObject {
-    x = 0;
-    y = 500;
+    x = 170;
+    y = 200;
     img;
-    height = 100;
-    width = 60;
+    height = 400;
+    width = 240;
+    imageCache = {};
 
     loadImage(path) {
         this.img = new Image();
         this.img.src = path;
     }
 
-    moveRight() {
-        console.log('movingRight');
-    }
+     loadImages(arr) {
+         arr.forEach((path) => {
+         let img = new Image(); 
+         img.src = path;
+        this.imageCache[path] = img;
+         });
+     }
+ 
 }

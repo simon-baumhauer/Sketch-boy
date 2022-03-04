@@ -6,11 +6,15 @@ let sketchtboy = new Character();
 
 
 function init() {
-console.log(sketchtboy);
-draw();
-} 
-
+    } 
+    
 function draw() {
-    ctx.drawImage(sketchtboy.img, sketchtboy.x, sketchtboy.y, sketchtboy.width, sketchtboy.height);
-    requestAnimationFrame(draw());
-}
+    setInterval(() => {
+        ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        ctx.drawImage(sketchtboy.img, sketchtboy.x, sketchtboy.y, sketchtboy.width, sketchtboy.height);
+    }, 1000 / 100);
+ 
+}   
+
+
+draw();
